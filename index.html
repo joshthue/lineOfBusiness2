@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Acme Product Management</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!--- javascript --->
+    <script src="js/angular.js"></script>
+    <script src="js/angular-resource.min.js"></script>
+    <script src="js/angular-mocks.js"></script>
+
+    <!--- application scripts --->
+    <script src="app/app.js"></script>
+
+    <!--- services --->
+    <script src="common/services/common.services.js"></script>
+    <script src="common/services/productResource.js"></script>
+    <script src="common/services/productResourceMock.js"></script>
+
+
+    <!--- controllers --->
+    <script src="app/products/productListController.js"></script>
+
+
+</head>
+<body ng-app="productManagement">
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size:large">Xmas Wish List - 2015</div>
+
+<div class="panel-body">
+
+</div>
+<table class="table" ng-controller="ProductListController as vm">
+    <thead>
+        <tr>
+            <td><button class="btn btn-primary" ng-click="vm.toggleImage();">{{vm.showImage ? "Hide" : "Show"}} Image</button></td>
+            <td>Product</td>
+            <td>Code</td>
+            <td>Available</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="product in vm.products">
+            <td><img ng-if="vm.showImage" ng-src="{{product.imageUrl}}" title="{{product.productName}}"></td>
+            <td>{{product.productName}}</td>
+            <td>{{product.productCode}}</td>
+            <td>{{product.releaseDate}}</td>
+            <td>{{product.price | currency}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>
