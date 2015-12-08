@@ -11,7 +11,8 @@
             {"productID" : 2, "productName":"BB Wire Shaker", "productCode": "BBWS1", "releaseDate": "04/01/2015", "price":1.49, "imageUrl":"http://nflpool.org/images/logos_45x45/Atl.gif"},
             {"productID" : 3, "productName":"Apple Ipod Touch", "productCode": "AIT", "releaseDate": "10/01/2015", "price":249.49, "imageUrl":"http://nflpool.org/images/logos_45x45/Nyg.gif"},
             {"productID" : 4, "productName":"PlayStation 4", "productCode": "PS4", "releaseDate": "04/11/2011", "price":299.49, "imageUrl":"http://nflpool.org/images/logos_45x45/Bal.gif"},
-            {"productID" : 5, "productName":"XBox One", "productCode": "XBOX1", "releaseDate": "11/01/2015", "price":349.49, "imageUrl":"http://nflpool.org/images/logos_45x45/Ari.gif"}
+            {"productID" : 5, "productName":"XBox One", "productCode": "XBOX1", "releaseDate": "11/01/2015", "price":349.49, "imageUrl":"http://nflpool.org/images/logos_45x45/Ari.gif"},
+            {"productID" : 6, "productName":"Ryder Cup Tickets", "productCode": "RYDER", "releaseDate": "12/09/2015", "price":750, "imageUrl":"http://nflpool.org/images/logos_45x45/Sea.gif"}
         ];
 
         //fake call goes here
@@ -31,7 +32,7 @@
                         product = products[i];
                         break;
                     }
-                };
+                }
             }
             return [200,product,{}];
         });
